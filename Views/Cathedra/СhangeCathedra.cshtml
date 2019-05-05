@@ -1,0 +1,36 @@
+﻿@model University.Models.CathedraModel
+@{
+    ViewBag.Title = "Добавить кафедру";
+}
+
+
+    <form method="put">
+        <label asp-for="Id">Изменение кафедры по идентификатору: </label><br />
+        <div> <input asp-for="Id" />
+        <span asp-validation-for="Id"></span></div>
+        <div>
+            <label>Введите новые значения</label>
+        </div>
+        <div>
+            <label asp-for="CathedraName">Наименование кафедры: </label><br />
+            <input asp-for="CathedraName" />
+            <span asp-validation-for="CathedraName"></span>
+        </div>
+        <div>
+            <label asp-for="FoundationYear">Год основания: </label><br />
+            <input asp-for="FoundationYear" />
+            <span asp-validation-for="FoundationYear"></span>
+        </div>
+        <div>
+            <label>Факультет:</label>
+        </div>
+        <div>
+            <select name="FacultyName">
+                @foreach (var v in ViewBag.Faculty)
+                {
+                    <option>@v.Id. @v.FacultyName</option>
+                }
+            </select>
+        </div>
+        <div><input type="submit" value="Изменить" /></div>
+    </form>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Кафедры";
+}
+
+<h3>@ViewBag.CountCathedras</h3>
+
+    <table border="1">
+        <tr>
+            <th>Идентификатор</th>
+            <th>Название кафедры</th>
+            <th>Год основания</th>
+            <th>Факультет</th>
+        </tr>
+        @foreach (var cathedra in ViewBag.Cathedras)
+        {
+            <tr>
+                <td>@cathedra.Id</td>
+                <td>@cathedra.CathedraName</td>
+                <td>@cathedra.FoundationYear</td>
+                <td>@cathedra.FacultyName</td>
+            </tr>
+        }
+    </table>
+
+
+

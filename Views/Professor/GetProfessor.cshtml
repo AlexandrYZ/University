@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Профессор";
+}
+
+
+@if (ViewBag.IdProfessorIsTrue)
+{
+
+    <table border="1">
+        <tr>
+            <th>Идентификатор:</th>
+            <th>Номер кафедры:</th>
+            <th>Дата начала работы на кафедре:</th>
+            <th>Фамилия:</th>
+            <th>Имя:</th>
+            <th>Отчество:</th>
+            <th>Должность:</th>
+            <th>Научное звание:</th>
+            <th>Дополнительные сведения:</th>
+        </tr>
+        @foreach (var professor in ViewBag.Professors)
+        {
+    <tr>
+        <td>@professor.Id</td>
+        <td>@professor.CathedraId</td>
+        <td>@professor.StartDate</td>
+        <td>@professor.Surname</td>
+        <td>@professor.Name</td>
+        <td>@professor.Patronymic</td>
+        <td>@professor.WorkPosition</td>
+        <td>@professor.AcademicDegree</td>
+        <td>@professor.Other</td>
+    </tr>
+        }
+    </table>
+}
+else
+{
+    <div><label>Профессор не найден</label></div>
+}
+
+

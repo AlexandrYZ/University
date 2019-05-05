@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Получить список преподавателей";
+}
+
+    <form method="get">
+        @if (ViewBag.Count > 0)
+        {
+            <table border="1">
+                <tr>
+                    <th>Идентификатор кафедры</th>
+                    <th>Название кафедры </th>
+                    <th>Год основания кафедры</th>
+                    <th>Факультет </th>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Отчество</th>
+                    <th>Должность</th>
+                    <th>Научное звание</th>
+                    <th>Дополнительные сведения</th>
+                </tr>
+                @foreach (var professor in ViewBag.Professors)
+                {
+                    <tr>
+                        <td>@professor.Id</td>
+                        <td>@professor.CathedraName</td>
+                        <td>@professor.FoundationYear</td>
+                        <td>@professor.FacultyName</td>
+                        <td>@professor.Surname</td>
+                        <td>@professor.Name</td>
+                        <td>@professor.Patronymic</td>
+                        <td>@professor.WorkPosition </td>
+                        <td>@professor.AcademicDegree </td>
+                        <td>@professor.Other </td>
+                    </tr>
+                }
+            </table>
+        }
+
+        <label>Идентификатор кафедры:</label>
+        <input type="number" name="Id" />
+        <input type="submit" value="Получить список преподавателей" />
+    </form>
+
